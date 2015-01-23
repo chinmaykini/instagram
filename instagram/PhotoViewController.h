@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PhotoViewController.h
 //  instagram
 //
 //  Created by Chinmay Kini on 1/22/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PhotoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
-
