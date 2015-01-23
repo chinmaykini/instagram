@@ -14,8 +14,8 @@
 		3B0D0BF41A71EF8300C74484 /* instagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D0BF31A71EF8300C74484 /* instagramTests.m */; };
 		3B39573D1A71F49A0021E9AC /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B39573B1A71F49A0021E9AC /* PhotoViewController.m */; };
 		3B39573E1A71F49A0021E9AC /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B39573C1A71F49A0021E9AC /* PhotoViewController.xib */; };
-		3B3957421A7200030021E9AC /* PhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3957401A7200030021E9AC /* PhotoTableViewCell.m */; };
-		3B3957431A7200030021E9AC /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3957411A7200030021E9AC /* PhotoTableViewCell.xib */; };
+		3BE10CE61A72331C001C87D2 /* PhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE10CE41A72331C001C87D2 /* PhotoTableViewCell.m */; };
+		3BE10CE71A72331C001C87D2 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE10CE51A72331C001C87D2 /* PhotoTableViewCell.xib */; };
 		B5766F69846DBF2B64EE8D2F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F95D9F3B488FFE77ABEFB56 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -44,9 +44,9 @@
 		3B39573A1A71F49A0021E9AC /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
 		3B39573B1A71F49A0021E9AC /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		3B39573C1A71F49A0021E9AC /* PhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
-		3B39573F1A7200030021E9AC /* PhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTableViewCell.h; sourceTree = "<group>"; };
-		3B3957401A7200030021E9AC /* PhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTableViewCell.m; sourceTree = "<group>"; };
-		3B3957411A7200030021E9AC /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
+		3BE10CE31A72331C001C87D2 /* PhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTableViewCell.h; sourceTree = "<group>"; };
+		3BE10CE41A72331C001C87D2 /* PhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTableViewCell.m; sourceTree = "<group>"; };
+		3BE10CE51A72331C001C87D2 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		5F95D9F3B488FFE77ABEFB56 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B718FF7CE048086AB9108F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,9 +101,9 @@
 				3B39573A1A71F49A0021E9AC /* PhotoViewController.h */,
 				3B39573B1A71F49A0021E9AC /* PhotoViewController.m */,
 				3B39573C1A71F49A0021E9AC /* PhotoViewController.xib */,
-				3B39573F1A7200030021E9AC /* PhotoTableViewCell.h */,
-				3B3957401A7200030021E9AC /* PhotoTableViewCell.m */,
-				3B3957411A7200030021E9AC /* PhotoTableViewCell.xib */,
+				3BE10CE31A72331C001C87D2 /* PhotoTableViewCell.h */,
+				3BE10CE41A72331C001C87D2 /* PhotoTableViewCell.m */,
+				3BE10CE51A72331C001C87D2 /* PhotoTableViewCell.xib */,
 			);
 			path = instagram;
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B3957431A7200030021E9AC /* PhotoTableViewCell.xib in Resources */,
+				3BE10CE71A72331C001C87D2 /* PhotoTableViewCell.xib in Resources */,
 				3B39573E1A71F49A0021E9AC /* PhotoViewController.xib in Resources */,
 				3B0D0BE81A71EF8300C74484 /* LaunchScreen.xib in Resources */,
 				3B0D0BE51A71EF8300C74484 /* Images.xcassets in Resources */,
@@ -287,7 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B3957421A7200030021E9AC /* PhotoTableViewCell.m in Sources */,
+				3BE10CE61A72331C001C87D2 /* PhotoTableViewCell.m in Sources */,
 				3B39573D1A71F49A0021E9AC /* PhotoViewController.m in Sources */,
 				3B0D0BDD1A71EF8300C74484 /* AppDelegate.m in Sources */,
 				3B0D0BDA1A71EF8300C74484 /* main.m in Sources */,

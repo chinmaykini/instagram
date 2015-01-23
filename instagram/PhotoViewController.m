@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
+    self.title = @"Instagram Populars";
     self.tableView.rowHeight = 320;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -34,9 +34,10 @@
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSLog(@"response: %@", responseDictionary);
+//        NSLog(@"response: %@", responseDictionary);
         
         self.data = responseDictionary[@"data"];
+        NSLog(@"%lu",(unsigned long)self.data.count);
         [self.tableView reloadData];
     }];
     
@@ -62,22 +63,35 @@
 }
 */
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
+    return self.data.count;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    
+//    cell.textLabel.text = [NSString stringWithFormat:@"This is Section %ld row %ld",indexPath.section, indexPath.row];
+
     PhotoTableViewCell *photocell = [tableView dequeueReusableCellWithIdentifier:@"PhotoTableViewCell" forIndexPath:indexPath];
     NSDictionary *photoData = self.data[indexPath.row];
+//     NSLog(@"row %@",self.data[indexPath.row]);
     NSLog(@"%@",[photoData valueForKeyPath:@"likes.count"]);
+     NSLog(@"%@",[photoData valueForKeyPath:@"user.username"]);
+     NSLog(@"%@",[photoData valueForKeyPath:@"caption.text"]);
+    NSLog(@"%@",[photoData valueForKeyPath:@"images.low_resolution.url"]);
 //
-//    cell.textLabel.text = [NSString stringWithFormat:@"This is Section %ld row %ld",indexPath.section, indexPath.row];
-    photocell.instaUser.text = [photoData valueForKeyPath:@"user.username"];
-//    photocell.instaLike.text = [photoData valueForKeyPath:@"likes.count"];
+
+    photocell.userField.text = [photoData valueForKeyPath:@"user.username"];
+    photocell.likesCellField.text = [NSString stringWithFormat:@"%@ likes",[photoData valueForKeyPath:@"likes.count"]];
+     photocell.captionField.text = [NSString stringWithFormat:@"%@",[photoData valueForKeyPath:@"caption.text"]];
+    [photocell.imageCellField setImageWithURL:[NSURL URLWithString:[photoData valueForKeyPath:@"images.low_resolution.url"]]];
     return photocell;
+//    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+     
 }
 
 @end

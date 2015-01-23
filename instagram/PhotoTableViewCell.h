@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface PhotoTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *instaImage;
-@property (weak, nonatomic) IBOutlet UILabel *instaLike;
-@property (weak, nonatomic) IBOutlet UILabel *instaCaption;
-@property (weak, nonatomic) IBOutlet UILabel *instaUser;
+@property (weak, nonatomic) IBOutlet UILabel *userField;
+@property (weak, nonatomic) IBOutlet UIImageView *imageCellField;
+@property (weak, nonatomic) IBOutlet UILabel *likesCellField;
+@property (weak, nonatomic) IBOutlet UILabel *captionField;
 
 @end
