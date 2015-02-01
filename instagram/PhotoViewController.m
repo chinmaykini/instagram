@@ -15,6 +15,7 @@
 
 @property ( nonatomic, strong) NSArray *data;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 
 @end
@@ -28,6 +29,10 @@
     self.tableView.rowHeight = 320;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
     
     
      NSURL *url = [NSURL URLWithString:@"https://api.instagram.com/v1/media/popular?client_id=876ab4c7f3c04e7c963dcf0332a50035"];
@@ -92,6 +97,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
      
+}
+
+- (void)onRefresh {
+    NSURL *url = [NSURL URLWithString:@"https://api.instagram.com/v1/media/popular?client_id=876ab4c7f3c04e7c963dcf0332a50035"];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        
+        
+        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        self.data = responseDictionary[@"data"];
+        [self.tableView reloadData];
+        
+        [self.refreshControl endRefreshing];
+    }];
 }
 
 @end
